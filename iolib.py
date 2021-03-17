@@ -17,28 +17,28 @@ class Reader:
     def read(self, count: int):
         return self.f.read(count)
     def read_8(self):
-        buf = self.f.read(1)
+        buf = self.read(1)
         return struct.unpack(self.e + "b", buf)[0]
     def read_16(self):
-        buf = self.f.read(2)
+        buf = self.read(2)
         return struct.unpack(self.e + "h", buf)[0]
     def read_32(self):
-        buf = self.f.read(4)
+        buf = self.read(4)
         return struct.unpack(self.e + "i", buf)[0]
     def read_64(self):
-        buf = self.f.read(8)
+        buf = self.read(8)
         return struct.unpack(self.e + "q", buf)[0]
     def read_u8(self):
-        buf = self.f.read(1)
+        buf = self.read(1)
         return struct.unpack(self.e + "B", buf)[0]
     def read_u16(self):
         buf = self.f.read(2)
         return struct.unpack(self.e + "H", buf)[0]
     def read_u32(self):
-        buf = self.f.read(4)
+        buf = self.read(4)
         return struct.unpack(self.e + "I", buf)[0]
     def read_u64(self):
-        buf = self.f.read(8)
+        buf = self.read(8)
         return struct.unpack(self.e + "Q", buf)[0]
     def read_nt_utf8_str(self, sb = 0):
         len = 0
@@ -54,7 +54,7 @@ class Reader:
     def tell(self):
         return self.f.tell()
     def skip(self, count: int):
-        self.f.seek(self.f.tell() + count)
+        self.seek(self.tell() + count)
 
 def dump_json(name, data, indent: int = 0):
     with open(name, 'w', encoding='utf8') as json_file:
