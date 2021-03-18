@@ -101,3 +101,7 @@ class Stuff:
         with open(name, 'w', encoding='utf8') as json_file:
             json.dump(data, json_file, ensure_ascii=False, indent=indent)
             json_file.close()
+    @staticmethod
+    def load_json(name):
+        with open(name, "r") as read_file:
+            return json.load(read_file)
