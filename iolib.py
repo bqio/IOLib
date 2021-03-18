@@ -97,7 +97,7 @@ class Reader:
 
 class Stuff:
     @staticmethod
-    def dump_json(name, data, indent: int = 0):
+    def dump_json(name, data, indent = None):
         with open(name, 'w', encoding='utf8') as json_file:
             json.dump(data, json_file, ensure_ascii=False, indent=indent)
             json_file.close()
