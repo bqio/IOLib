@@ -2,20 +2,24 @@
 
 Python Input/Output Library
 
-# Requirements
+## Requirements
 
 - openpyxl
 
-# Features
+## Features
 
-## Reader
+### Reader
 
 Simple binary reader class.
 
-## Excel
+### Writer
+
+Simple binary writer class.
+
+### Excel
 
 Simple excel reader/writer class.
 
-## Stuff
+### Stuff
 
 Another IO stuff.
